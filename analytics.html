@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BattleGrid AI — Analytics</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="analytics">
+  <header class="nav">
+    <div class="container">
+      <h1>BattleGrid AI</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="threat.html">Threat Engine</a>
+        <a href="comms.html">Comms</a>
+        <a href="missions.html">Missions</a>
+        <a class="active" href="analytics.html">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Correlation & Trends</h2>
+      <div class="grid-2">
+        <div class="card-sub">
+          <div class="subhead">Event Trend (Last 60m)</div>
+          <canvas id="trendChart" class="canvas" width="640" height="240"></canvas>
+        </div>
+        <div class="card-sub">
+          <div class="subhead">Performance Metrics</div>
+          <div id="metrics" class="metrics">
+            <div class="kpi"><div class="kpi-val" id="kUptime">–</div><div class="kpi-label">Uptime</div></div>
+            <div class="kpi"><div class="kpi-val" id="kMTTA">–</div><div class="kpi-label">Mean Time To Alert</div></div>
+            <div class="kpi"><div class="kpi-val" id="kAccuracy">–</div><div class="kpi-label">Detection Accuracy</div></div>
+            <div class="kpi"><div class="kpi-val" id="kOpsLoad">–</div><div class="kpi-label">Ops Load</div></div>
+          </div>
+          <button id="exportAnalytics" class="secondary" style="margin-top:12px;">Export Analytics JSON</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Predictive Logistics</h2>
+      <p class="muted">Simple forecast based on recent mission pace + stock burn rate.</p>
+      <div id="forecastLogi" class="mono"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">All analytics computed locally from simulated data</div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

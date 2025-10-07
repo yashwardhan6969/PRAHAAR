@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BattleGrid AI — Comms</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="comms">
+  <header class="nav">
+    <div class="container">
+      <h1>BattleGrid AI</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="threat.html">Threat Engine</a>
+        <a class="active" href="comms.html">Comms</a>
+        <a href="missions.html">Missions</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Secure Messaging (Demo)</h2>
+      <div class="row">
+        <input id="msgInput" placeholder="Type message…" />
+        <label class="chk"><input id="encToggle" type="checkbox" /> simulate encryption</label>
+        <button id="sendMsg">Send</button>
+      </div>
+      <ul id="msgList" class="feed-list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Encrypted File Sharing (Demo)</h2>
+      <div class="row">
+        <input id="fileInput" type="file" />
+        <button id="shareFile">Share</button>
+      </div>
+      <ul id="fileList" class="feed-list"></ul>
+      <p class="muted small">Note: encryption is simulated client-side for demo; no files leave your browser.</p>
+    </section>
+
+    <section class="card">
+      <h2>Voice-to-Text (Mock)</h2>
+      <div class="row">
+        <input id="audioInput" type="file" accept="audio/*" />
+        <button id="transcribeBtn">Transcribe</button>
+      </div>
+      <div id="transcriptOut" class="mono"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">Offline-capable demo via localStorage</div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

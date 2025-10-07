@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BattleGrid AI — Threat Engine</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="threat">
+  <header class="nav">
+    <div class="container">
+      <h1>BattleGrid AI</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a class="active" href="threat.html">Threat Engine</a>
+        <a href="comms.html">Comms</a>
+        <a href="missions.html">Missions</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Computer Vision (Demo)</h2>
+      <p class="muted">Upload an image to simulate detections (person/vehicle/animal) with confidence scores.</p>
+      <div class="grid-2">
+        <div class="card-sub">
+          <input id="cvUpload" type="file" accept="image/*" />
+          <canvas id="cvCanvas" width="640" height="400" class="canvas"></canvas>
+        </div>
+        <div class="card-sub">
+          <div class="subhead">Detections</div>
+          <ul id="cvDetections" class="feed-list"></ul>
+          <div class="subhead" style="margin-top:12px;">Pattern Recognition</div>
+          <div id="patternOut" class="mono small"></div>
+          <div class="subhead" style="margin-top:12px;">Predictive Analytics (15-min)</div>
+          <div id="forecastOut" class="mono small"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Automated Alert Generation</h2>
+      <p class="muted">Fuses detections + motion + access logs into a confidence-weighted alert.</p>
+      <button id="generateAlert">Generate Alert from Last 10 Events</button>
+      <div id="alertPreview" class="mono"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">
+      Defensive-only demo. No real cameras or networks used.
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

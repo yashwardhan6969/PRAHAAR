@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BattleGrid AI — Command Center</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.5.2/ol.css">
+</head>
+<body data-page="dashboard">
+  <header class="nav">
+    <div class="container">
+      <h1>BattleGrid AI</h1>
+      <nav>
+        <a class="active" href="index.html">Dashboard</a>
+        <a href="threat.html">Threat Engine</a>
+        <a href="comms.html">Comms</a>
+        <a href="missions.html">Missions</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-head">
+        <h2>Real-Time Sensor Data Fusion</h2>
+        <div class="controls">
+          <label>Scenario:
+            <select id="scenario">
+              <option value="perimeter_intrusion">Perimeter Intrusion</option>
+              <option value="false_alarm_wildlife">False Alarm (Wildlife)</option>
+              <option value="convoy_route_risk">Convoy Route Risk</option>
+            </select>
+          </label>
+          <label>Speed (Hz):
+            <input id="hz" type="number" min="0.1" max="10" step="0.1" value="1" />
+          </label>
+          <button id="apply">Apply</button>
+        </div>
+      </div>
+
+      <div id="alert" class="alert" hidden>
+        <strong id="alertLevel">RISK:</strong>
+        <span id="alertMsg">—</span>
+      </div>
+
+      <div class="grid">
+        <div class="map card-sub">
+          <div class="subhead">Operational Map (OpenLayers)</div>
+          <div id="olMap" class="ol-map"></div>
+          <div class="muted small" style="margin-top:6px;">Base: OSM • Markers: simulated sensors • Heat ring = latest hotspot</div>
+        </div>
+        <div class="feed card-sub">
+          <div class="subhead">Live Event Feed</div>
+          <ul id="feed" class="feed-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="subhead">Quick Analysis</div>
+      <button id="analyzeBtn">Analyze last events</button>
+      <div id="analysisOut" class="mono"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">
+      Prototype — Simulated Data — Defensive-only
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7.5.2/dist/ol.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

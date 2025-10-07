@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BattleGrid AI — Missions</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="missions">
+  <header class="nav">
+    <div class="container">
+      <h1>BattleGrid AI</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="threat.html">Threat Engine</a>
+        <a href="comms.html">Comms</a>
+        <a class="active" href="missions.html">Missions</a>
+        <a href="analytics.html">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Digital Mission Briefing</h2>
+      <div class="grid-2">
+        <div class="card-sub">
+          <div class="row">
+            <input id="mTitle" placeholder="Title (e.g., North Perimeter Watch)" />
+          </div>
+          <div class="row">
+            <textarea id="mDesc" placeholder="Briefing notes…" rows="4"></textarea>
+          </div>
+          <div class="row">
+            <label>Due:
+              <input id="mDue" type="datetime-local" />
+            </label>
+            <label>Priority:
+              <select id="mPriority">
+                <option>Low</option><option>Medium</option><option>High</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <input id="mPersonnel" placeholder="Personnel (comma-separated)" />
+          </div>
+          <div class="row">
+            <input id="mEquipment" placeholder="Equipment (comma-separated)" />
+          </div>
+          <div class="row">
+            <button id="addMissionBtn">Add Mission</button>
+            <button id="optimizeBtn" class="secondary">Optimize Resources</button>
+          </div>
+        </div>
+        <div class="card-sub">
+          <div class="subhead">Missions</div>
+          <ul id="missionsList" class="feed-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Timeline</h2>
+      <canvas id="timeline" class="canvas" width="1000" height="220"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container small">Scheduling & assignments are simulated client-side</div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
